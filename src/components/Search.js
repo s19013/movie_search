@@ -1,6 +1,9 @@
 import React, {useState} from "react";
-import TextField from './MakeTextField';
-import Button from './Makebutton';
+// import TextField from './MakeTextField';
+// import Button from './Makebutton';
+// import Button from '@material-ui/core/Button';
+// import TextField from '@material-ui/core/TextField';
+
 
 const Search = (props) => {
   const [searchValue,setSearchValue] = useState("");
@@ -14,19 +17,25 @@ const Search = (props) => {
   }
 
   const callSearchFunction = (e) => {
+    // console.log(e);
     e.preventDefault();
     props.search(searchValue);
-    console.log(e);
     resetInputField();
   }
 
   return (
     <form className="search">
-      <TextField>
+      <input
+          value={searchValue}
+          onChange={handleSearchInputChanges}
+          type="text"
+        />
+        <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+      {/* <TextField>
         value = {searchValue}
         onChange = {handleSearchInputChanges}
-      </TextField>
-      <Button onClick="{callSearchFunction}"/>
+      </TextField> */}
+      {/* <Button onClick="{callSearchFunction}"/> */}
     </form>
   )
 }
