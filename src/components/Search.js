@@ -16,6 +16,7 @@ const Search = (props) => {
   const callSearchFunction = (e) => {
     e.preventDefault();
     props.search(searchValue);
+    console.log(e);
     resetInputField();
   }
 
@@ -25,7 +26,7 @@ const Search = (props) => {
         value = {searchValue}
         onChange = {handleSearchInputChanges}
       </TextField>
-      <Button onClick={callSearchFunction} type="submit" value="SEARCH"/>
+      <Button onClick="{callSearchFunction}"/>
     </form>
   )
 }

@@ -16,7 +16,7 @@ export default function MakeButton(props) {
   return (
     <div className={classes.root}>
       <Button variant="contained" color="primary">
-        update
+        search
       </Button>
     </div>
   );
