@@ -16,9 +16,11 @@ const App = () => {
     useEffect(() => {
       fetch(Movie_api_url)
         .then(response => response.json())
+        // .then(console.log())
         .then(jsonResponse => {
           setMovies(jsonResponse.Search);
           setLoading(false);
+          // console.log(response);
         });
     }, []);
       const search = searchValue => {
